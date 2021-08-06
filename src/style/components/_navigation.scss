@@ -1,0 +1,90 @@
+.navigation {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 28px;
+  color: white;
+  .hoveer{
+    color: white;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: #71A71D;
+    top: -180px;
+    left: -160px;
+    z-index: -1;
+    animation: navAnim 20s infinite alternate;
+
+    @keyframes navAnim {
+      50% {
+        transform: scale(1.2);
+      }
+      100% { 
+        transform: scale(1);
+      }
+    }
+    @media screen and (max-width: 430px){
+      height: 50px;
+      width: 50px;
+    }
+  }
+  .nav-active {
+    color: white;
+  }
+  ul:hover li:not(:hover) {
+    opacity: .5;
+    
+  }
+ .detail:hover{
+    color:#096B14;
+  }
+  
+  ul:hover{
+    color:white;
+  }
+  .hoveer:hover{
+    color: white;
+  }
+
+ 
+  .nav-portfolio {
+    cursor: pointer;
+    display: flex;
+     padding-right: 6rem;
+    transition: .5s;
+
+    &:hover .nav-projects,
+    .nav-projects:hover {
+
+      visibility: visible;
+      opacity: 1;
+
+      li {
+        transform: rotatey(0deg)
+      }
+    }
+
+    .nav-projects {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      padding: 0 40px;
+      width: 300px;
+      transform: translateX(70px);
+      transition: .3s ;
+      perspective: 190px;
+
+      li {
+        transform: rotatey(30deg) scaleX(1.2);
+        transform-origin: center;
+        transition: .3s;
+      }
+    }
+  }
+} 
